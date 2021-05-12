@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: qiyiwebui
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 192.168.188.146
+    port: 6379
+  session:
+    store-type: none
+    timeout: 1800   #单位为秒
+server:
+  port: 10002
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com:
+      offcn: debug
+  file:
+    path: D:\Users\LJT\Documents\IdeaProjects\offcn-parent\log\
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectionTimeout: 2000
+        readTimeout: 2000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillseconds: 10000

@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: qiyiOrder
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/atcrowdfunding?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 19991204
+    type: com.alibaba.druid.pool.DruidDataSource
+    filter: stat #开启监控过滤
+  redis:
+    port: 6379
+    host: 192.168.188.146
+server:
+  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/offcn/mapper/*.xml
+logging:
+  level:
+    com:
+      offcn: debug
+  file:
+    path: D:\Users\LJT\Documents\IdeaProjects\offcn-parent\log\

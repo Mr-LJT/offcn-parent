@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: qiyiUser
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 19991204
+    url: jdbc:mysql://localhost:3306/atcrowdfunding?useSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+    filter: stat #开启监控过滤
+  redis:
+    host: 192.168.188.146
+    port: 6379
+server:
+  port: 7000
+mybatis:
+  mapper-locations: classpath:com/offcn/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com:
+      offcn: debug
+  file:
+    path: D:\Users\LJT\Documents\IdeaProjects\offcn-parent\log\
+
+sms:
+  host: http://dingxin.market.alicloudapi.com
+  path: /dx/sendSms
+  method: POST
+  appcode: 281cf5092c274e45b1964851930ca2a4
